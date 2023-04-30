@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components';
+import '../assets/fonts/Font.css';
 
 const size = {
   mobile: '600px',

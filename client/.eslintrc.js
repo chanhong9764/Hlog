@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier', 'react'],
+  plugins: ['@typescript-eslint', 'prettier'],
   extends: [
     'airbnb',
     'plugin:import/errors',
@@ -9,6 +9,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   rules: {
+    'react/require-default-props': 'off',
     '@typescript-eslint/no-unused-vars': 'off', // reducer에서 사용하지 않는 것 때문에 설정
     'linebreak-style': 0,
     'import/prefer-default-export': 0,

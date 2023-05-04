@@ -16,15 +16,13 @@ const media = {
 };
 
 const darkTheme: DefaultTheme = {
-  bgColor: '#353b48',
-  textColor: 'black',
-  accentColor: '#487eb0',
+  primaryColor: 'black',
+  secondaryColor: '#121212',
 };
 
 const lightTheme: DefaultTheme = {
-  bgColor: '#f5f6fa',
-  textColor: '#353b48',
-  accentColor: '#487eb0',
+  primaryColor: 'white',
+  secondaryColor: '#6667AB',
 };
 
 export const theme = {

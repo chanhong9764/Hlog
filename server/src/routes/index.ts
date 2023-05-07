@@ -1,9 +1,9 @@
 import { Router } from "express";
-//import auth from "./routes/auth";
+import category from "./category";
 
 export default () => {
   const app = Router();
-  //auth(app);
+  category(app);
 
   return app;
 };

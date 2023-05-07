@@ -11,6 +11,9 @@ export class CategoryModel extends Model<
   InferAttributes<CategoryModel>,
   InferCreationAttributes<CategoryModel>
 > {
+  toObject() {
+    throw new Error("Method not implemented.");
+  }
   declare id: CreationOptional<number>;
   declare name: string;
   declare href: string;

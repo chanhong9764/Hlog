@@ -1,23 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CgMenu } from 'react-icons/cg';
-import CustomText from 'components/Atoms/CustomText';
+import Menu from 'components/Molecules/Menu';
+import Title from 'components/Molecules/Title';
+import Search from 'components/Molecules/Search';
+import SideMenu from 'components/Molecules/SideMenu';
+import useConfig from 'hooks/useConfig';
 
 function Header() {
   return (
-    <HeaderBg>
-      <CgMenu />
-      <CustomText fontWeight={500} fontSize={20}>
-        HLog
-      </CustomText>
-    </HeaderBg>
+    <>
+      <SideMenu />
+      <HeaderBg>
+        <Menu />
+        <Title />
+        <Search />
+      </HeaderBg>
+    </>
   );
 }
 
 export default Header;
 
-const HeaderBg = styled.div`
-  background-color: ${(props) => props.theme.bgColor};
+const HeaderBg = styled.header`
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: ${(props) => props.theme.secondaryColor};
   height: 100px;
+  padding: 0 30px;
 `;

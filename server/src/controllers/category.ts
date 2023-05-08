@@ -1,6 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 import * as CategoryService from "../services/category";
-import { ICategoryInputDTO } from "../interfaces/ICategory";
+import {
+  ICategoryCreateDTO,
+  ICategoryUpdateDTO,
+} from "../interfaces/ICategory";
 
 export async function getCategory(
   req: Request,
@@ -28,7 +31,7 @@ export async function createCategory(
   next: NextFunction
 ) {
   const { category } = await CategoryService.createCategory(
-    req.body as ICategoryInputDTO
+    req.body as ICategoryCreateDTO
   );
   return res.status(201).json(category);
 }
@@ -49,6 +52,6 @@ export async function updateCategory(
   next: NextFunction
 ) {
   const { id } = req.params;
-  await CategoryService.updateCategory(id, req.body as ICategoryInputDTO);
+  await CategoryService.updateCategory(id, req.body as ICategoryUpdateDTO);
   return res.status(200).end();
 }

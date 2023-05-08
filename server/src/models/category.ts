@@ -17,7 +17,7 @@ export class CategoryModel extends Model<
   declare id: CreationOptional<number>;
   declare name: string;
   declare href: string;
-  declare class: number;
+  declare class: number | undefined;
   declare deletedAt: CreationOptional<Date>;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;

@@ -1,4 +1,8 @@
-import { ICategory, ICategoryInputDTO } from "../interfaces/ICategory";
+import {
+  ICategory,
+  ICategoryCreateDTO,
+  ICategoryUpdateDTO,
+} from "../interfaces/ICategory";
 import { DB } from "../loaders/mysql";
 import HttpException from "../models/HttpException";
 
@@ -22,9 +26,9 @@ export async function getCategories(): Promise<{
   return { categories };
 }
 
-export async function createCategory(ICategoryInputDTO: ICategoryInputDTO) {
+export async function createCategory(ICategoryCreateDTO: ICategoryCreateDTO) {
   const category = await DB.category.create({
-    ...ICategoryInputDTO,
+    ...ICategoryCreateDTO,
   });
   if (!category) {
     throw new HttpException(500, "카테고리가 생성되지 않았습니다.");
@@ -43,9 +47,9 @@ export async function deleteCategory(categoryId: string) {
 
 export async function updateCategory(
   categoryId: string,
-  ICategoryInputDTO: ICategoryInputDTO
+  ICategoryUpdateDTO: ICategoryUpdateDTO
 ) {
-  const numOfCategory = await DB.category.update(ICategoryInputDTO, {
+  const numOfCategory = await DB.category.update(ICategoryUpdateDTO, {
     where: { id: categoryId },
   });
   if (!numOfCategory) {

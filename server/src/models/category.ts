@@ -17,7 +17,6 @@ export class CategoryModel extends Model<
   declare id: CreationOptional<number>;
   declare name: string;
   declare href: string;
-  declare class: number | undefined;
   declare deletedAt: CreationOptional<Date>;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
@@ -40,11 +39,6 @@ export default function (sequelize: Sequelize): typeof CategoryModel {
         allowNull: false,
         type: DataTypes.STRING,
         unique: true,
-      },
-      class: {
-        allowNull: false,
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
       },
       deletedAt: DataTypes.DATE,
       createdAt: DataTypes.DATE,

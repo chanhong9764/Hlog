@@ -11,7 +11,7 @@ export default {
   port: process.env.PORT,
   corsConfig: {
     origin: "http://localhost:3000",
-    credential: true,
+    credentials: true,
   },
   dbConfig: {
     username: process.env.DB_USERNAME,

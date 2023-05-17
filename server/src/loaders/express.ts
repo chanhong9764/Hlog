@@ -9,7 +9,7 @@ export default async ({ app }: { app: Application }) => {
   app.use(cors(config.corsConfig));
   // Express 업데이트 이후 따로 body-parser 설치 불필요
   app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
+  app.use(express.urlencoded({ extended: true }));
   // 라우팅
   app.use(config.api.prefix!, routes());
 

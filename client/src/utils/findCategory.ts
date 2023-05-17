@@ -1,12 +1,10 @@
-import { useLocation } from 'react-router-dom';
+import useConfig from 'hooks/useConfig';
+import { Category } from '../@types/config';
 
-interface Props {
-  href: string;
-}
-export default function findCategory(href: string) {
-  const location = useLocation();
-  if (location.pathname.split('/')[1] === href.split('/')[1]) {
-    return true;
+export default function findCategory(pathname: string, categories: Category[]) {
+  const category = categories.find((category) => category.href.split('/')[1] === pathname.split('/')[1]);
+  if (category) {
+    return category.id;
   }
-  return false;
+  return 0;
 }

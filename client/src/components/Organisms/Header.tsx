@@ -3,19 +3,19 @@ import styled from 'styled-components';
 import Menu from 'components/Molecules/Menu';
 import Title from 'components/Molecules/Title';
 import Search from 'components/Molecules/Search';
-import SideMenu from 'components/Molecules/SideMenu';
-import useConfig from 'hooks/useConfig';
 
-function Header() {
+interface Props {
+  isOpen: boolean;
+  setisOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function Header({ isOpen, setisOpen }: Props) {
   return (
-    <>
-      <SideMenu />
-      <HeaderBg>
-        <Menu />
-        <Title />
-        <Search />
-      </HeaderBg>
-    </>
+    <HeaderBg>
+      <Menu setisOpen={setisOpen} isOpen={isOpen} />
+      <Title />
+      <Search />
+    </HeaderBg>
   );
 }
 

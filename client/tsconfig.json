@@ -2,22 +2,22 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "./src",
-    "allowJs": true,
-    "noImplicitAny": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "baseUrl": "./src", // 모듈 이름을 처리할 기준 디렉토리
+    "allowJs": true, // TypeScript 컴파일 작업 진행시 js파일도 컴파일 할것인지 여부
+    "noImplicitAny": true, // any타입 금지 여부
+    "skipLibCheck": true, // 정의 파일의 타입 확인을 건너 뛸것인지
+    "esModuleInterop": true, // import 관련
+    "allowSyntheticDefaultImports": true, // default export를 쓰지 않은 모듈도 default import가 가능하게 할건지 여부
+    "strict": true, // 모든 엄격한 타입-체킹 옵션 활성화 여부
+    "forceConsistentCasingInFileNames": false, // 같은 파일에 대한 일관되지 않은 참조를 허용하지 않을지 여부
+    "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기
+    "module": "commonjs", // 모듈 import 방법
+    "moduleResolution": "node", // 모듈 해석 방법 설정
+    "resolveJsonModule": true, // TypeScript 모듈 내에서 json 모듈을 가져올수 있는 옵션
+    "isolatedModules": true, // 각 파일을 분리된 모듈로 트랜스파일
+    "noEmit": true, // 결과 파일을 내보낼지 여부
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "custom.d.ts"],
   "exclude": ["node_modules"]
 }

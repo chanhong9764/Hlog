@@ -2,6 +2,6 @@ import API from './axios';
 
 export const configAPI = {
   category() {
-    return API.get('/categories');
+    return API.get('/category');
   },
 };

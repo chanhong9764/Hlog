@@ -10,7 +10,7 @@ interface Props extends BoxColor {
   children: React.ReactNode;
 }
 
-export default function HeaderBox({ children, backgroundColor, onClick }: Props) {
+export default function Card({ backgroundColor, onClick, children }: Props) {
   return (
     <Box onClick={onClick} backgroundColor={backgroundColor}>
       {children}

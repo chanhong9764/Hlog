@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface Props {
@@ -6,11 +7,11 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function CustomLink({ href, children }: Props) {
-  return <Link href={href}>{children}</Link>;
+export default function ReactLink({ href, children }: Props) {
+  return <StyledLink to={href}>{children}</StyledLink>;
 }
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
   width: 100%;
   height: 70px;
   display: flex;

@@ -24,5 +24,14 @@ export default function useConfig() {
     dispatch(configActions.categoryRequest());
   }, []);
 
-  return { isDarkMode, isOpenMenu, isOpenSearch, darkMode, openMenu, openSearch, getCategories };
+  return {
+    isDarkMode,
+    isOpenMenu,
+    isOpenSearch,
+    darkMode,
+    openMenu,
+    openSearch,
+    getCategories,
+    categories,
+  };
 }

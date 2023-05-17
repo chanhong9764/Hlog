@@ -11,15 +11,15 @@ interface Props extends TextProps {
   children: React.ReactNode;
 }
 
-export default function CustomText({ fontWeight, fontSize, color, children }: Props) {
+export default function Text({ fontWeight, fontSize, color, children }: Props) {
   return (
-    <Text fontSize={fontSize} fontWeight={fontWeight} color={color}>
+    <StyledText fontSize={fontSize} fontWeight={fontWeight} color={color}>
       {children}
-    </Text>
+    </StyledText>
   );
 }
 
-const Text = styled.span<TextProps>`
+const StyledText = styled.span<TextProps>`
   font-size: ${(props) => props.fontSize || 14}px;
   font-weight: ${(props) => props.fontWeight || 400};
   color: ${(props) => props.color || 'black'};

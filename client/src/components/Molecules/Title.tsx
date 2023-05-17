@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import CustomText from 'components/Atoms/CustomText';
-import CustomLink from 'components/Atoms/CustomLink';
+import Text from 'components/Atoms/Text';
+import Link from 'components/Atoms/Link';
 
 function Title() {
   return (
     <TitleBg>
-      <CustomLink href="/">
-        <CustomText fontWeight={600} fontSize={20} color="white">
+      <Link href="/">
+        <Text fontWeight={600} fontSize={20} color="white">
           H-Log
-        </CustomText>
-      </CustomLink>
+        </Text>
+      </Link>
     </TitleBg>
   );
 }
